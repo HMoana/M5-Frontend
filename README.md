@@ -1,70 +1,96 @@
-# Getting Started with Create React App
+# React app built, run & hosted with docker containers and docker compose
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Metro re-design of homepage and search listing page
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+### **Overview**
 
-### `npm start`
+- Week 1: Will be setting up the infrastructure for UX Designer's application to run using docker containers, docker compose and MongoDB
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Week 2: Creating the application based on the version of prototype design received from UX Designers at the end of Week 1.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+### **About our projects**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Metro Re-design home page and search listing page
 
-### `npm run build`
+### **Purpose**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The purpose of this project is to assimilate a working environment, adopting an agile mindset and putting into practice. Collaborating as a development team to deliver the re-designed prototype.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### **Built with:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo-react&logoColor=026e00 "React")
+- [React-url](https://react.dev/ "Reacturl")
+- [Docker](https://img.shields.io/badge/Docker-20232A?style=for-the-badge&logo-docker&logoColor=CF649A "Docker")
+- [Docker-url](https://www.docker.com/ "Dockerurl")
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### **Getting started:**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### _Prerequisites -_
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+#### _The software needed to install -_
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- _Dependencies:_
 
-## Learn More
+- React
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  ```sh
+  npx create-react-app .
+  ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone the repo
 
-### Analyzing the Bundle Size
+   ```sh
+   git clone https://github.com/HMoana/M5-Frontend.git
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Install NPM packages
 
-### Making a Progressive Web App
+   ```sh
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+### **Features:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Dockerized react app
+- Hosted and run by docker compose
+- Communicates with backend using MongoDB
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### **Future improvements:**
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### **Contributors & our Contacts:**
+
+- Heni Kimura - <henik@missionreadyhq.com>
+- Jin Zhang - <jinz@missionreadyhq.com>
+- Aneesha Baidwan - <aneeshab@missionreadyhq.com>
+- Myint Aung - <myint@missionreadyhq.com>
+
+### **Project Link:**
+
+[Github repository](https://github.com/HMoana/M5-Frontend.git "Github repository")
+
+### **License:**
+
+Distributed under the MIT License. See LICENSE.txt for more information.
+
+### **Acknowledgments:**
+
+- [Programming with Mosh](https://youtu.be/pTFZFxd4hOI "Programming with Mosh")
+- [Programming with Mosh, Docker Compose](https://youtu.be/HG6yIjZapSA "Programming with Mosh, Docker Compose")
+- [Docker Compose](https://docs.docker.com/compose/gettingstarted/ "Docker Compose")
+- [ZenOfAI](https://medium.com/zenofai/how-to-build-a-node-js-and-mongodb-application-with-docker-containers-15e535baabf5 "ZenOfAI")

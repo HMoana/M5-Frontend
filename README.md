@@ -14,7 +14,13 @@
 
 ### **About our projects**
 
-Metro Re-design home page and search listing page
+### _Metro Re-design_
+
+- Metro Home page by Jin Zhang
+- Branch feature-homepage
+
+- Metro search listing page by Heni Kimura
+- Branch feature-listing-page
 
 ### **Purpose**
 

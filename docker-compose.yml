@@ -19,8 +19,8 @@ services:
     volumes:
       - /data/backend_data:/myapp/data
     environment:
-      DB_URL: mongodb://mongo_db:27017
-      DB_NAME: my_db
+      DB_URL: mongodb://mongo_db:27017/mydatabase
+      DB_NAME: mydatabase
     depends_on:
       - mongo_db
 

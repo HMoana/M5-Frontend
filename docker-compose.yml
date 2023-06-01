@@ -19,8 +19,9 @@ services:
     volumes:
       - /data/backend_data:/myapp/data
     environment:
-      DB_URL: mongodb://mongo_db:27017/mydatabase
+      DB_URL: mongodb+srv://${DB_USER}:${PASSWORD}@cluster0.h1hajx0.mongodb.net/?retryWrites=true&w=majority
       DB_NAME: mydatabase
+    env_file: ../backend/.env
     depends_on:
       - mongo_db
 

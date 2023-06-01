@@ -11,22 +11,22 @@ services:
       - mongo_db:/data/db
 
     # Node API service
-  backend:
+  server:
     build:
-      context: ../backend
+      context: ../server
     ports:
       - 8081:8080
     volumes:
-      - /data/backend_data:/myapp/data
+      - /data/server_data:/myapp/data
     environment:
       DB_URL: mongodb+srv://${DB_USER}:${PASSWORD}@cluster0.h1hajx0.mongodb.net/?retryWrites=true&w=majority
       DB_NAME: mydatabase
-    env_file: ../backend/.env
+    env_file: ../server/.env
     depends_on:
       - mongo_db
 
   # react app
-  frontend:
+  client:
     build: .
     ports:
       - 3001:3000

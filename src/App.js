@@ -4,7 +4,7 @@ import Header from "./Components/CommonComponents/Header";
 import Footer from "./Components/CommonComponents/Footer";
 import HeaderImageContainer from "./Components/Homepage/HeaderImageContainer";
 
-function App() {
+const App = () => {
   return (
     <div>
       <Header />
@@ -12,6 +12,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;

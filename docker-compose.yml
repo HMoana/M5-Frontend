@@ -9,8 +9,10 @@ services:
       - 27017:27017
     volumes:
       - mongo_db:/data/db
+    networks:
+      - my-network
 
-    # Node API service
+  # Node API service
   server:
     build:
       context: ../server
@@ -19,17 +21,23 @@ services:
     volumes:
       - /data/server_data:/myapp/data
     environment:
-      DB_URL: mongodb+srv://${DB_USER}:${PASSWORD}@cluster0.h1hajx0.mongodb.net/?retryWrites=true&w=majority
-      DB_NAME: mydatabase
+      DB_URL: mongodb://mongo_db:27017/mydatabase
     env_file: ../server/.env
     depends_on:
       - mongo_db
+    networks:
+      - my-network
 
   # react app
   client:
     build: .
     ports:
       - 3001:3000
+    networks:
+      - my-network
 
 volumes:
   mongo_db: {}
+
+networks:
+  my-network:

@@ -1,23 +1,11 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import HelloWorld from "./HelloWorld.js";
 
-function App() {
-  const [helloWorld, setHelloWorld] = useState("");
-
-  useEffect(() => {
-    axios
-      .get("http://localhost:8081/helloWorld")
-      .then((response) => {
-        // handle success
-        setHelloWorld(JSON.stringify(response.data));
-      })
-      .catch((error) => {
-        // handle error
-        console.log(error);
-      });
-  }, []);
-
-  return <div>{helloWorld}</div>;
-}
+const App = () => {
+  return (
+    <div>
+      <HelloWorld />
+    </div>
+  );
+};
 
 export default App;

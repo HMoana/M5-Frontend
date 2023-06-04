@@ -1,7 +1,7 @@
 # need an OS to run my api
 # tell docker where to get the OS from
 # this image has alpine OS with node in it
-FROM node:18-alpine
+FROM node:14
 
 WORKDIR /client
 

@@ -1,43 +1,20 @@
-version: "3.8"
-
+version: "3"
 services:
-  # MongoDB service
-  mongo_db:
-    image: mongo:latest
-    restart: always
-    ports:
-      - 27017:27017
-    volumes:
-      - mongo_db:/data/db
-    networks:
-      - my-network
-
-  # Node API service
   server:
-    build:
-      context: ../server
+    build: ../server
     ports:
-      - 8081:8080
-    volumes:
-      - /data/server_data:/myapp/data
-    environment:
-      DB_URL: mongodb://mongo_db:27017/mydatabase
-    env_file: ../server/.env
+      - 8080:8080
     depends_on:
-      - mongo_db
-    networks:
-      - my-network
-
-  # react app
+      - mongo
   client:
     build: .
     ports:
-      - 3001:3000
-    networks:
-      - my-network
-
-volumes:
-  mongo_db: {}
-
-networks:
-  my-network:
+      - 3000:3000
+    depends_on:
+      - server
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db

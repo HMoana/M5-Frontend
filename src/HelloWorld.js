@@ -6,7 +6,7 @@ const HelloWorld = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8081/helloWorld")
+      .get("http://localhost:8080/helloWorld")
       .then((response) => {
         // handle success
         setHelloWorld(JSON.stringify(response.data));

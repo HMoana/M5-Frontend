@@ -1,0 +1,43 @@
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 3%;
+}
+
+.formDesign {
+  width: 60%;
+  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  justify-content: center;
+  align-items: left;
+}
+
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.submitButtonTwo {
+  background-color: #e4343b;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submitButtonTwo :hover {
+  background-color: #e4343b;
+}

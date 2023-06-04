@@ -43,8 +43,17 @@ const Footer = () => {
       <div className={styles.columnRight}>
         <h2>Subscribe to our Newsletter</h2>
         <form action="" method="POST">
-          <input type="text" placeholder="  Email Address" />
-          <input type="submit" value="Submit" />
+          <input
+            type="text"
+            placeholder="  Email Address"
+            style={{
+              width: "60%",
+              height: "48px",
+              borderRadius: "8px",
+              marginRight: "10px",
+            }}
+          />
+          <input type="submit" value="Submit" className={styles.submitButton} />
         </form>
         <p>09 391 4642 | +64 21 646 119 | info@metronz.co.nz</p>
         <p>Level 33, ANZ Centre 23-29 Albert St, Auckland 1010, New Zealand</p>

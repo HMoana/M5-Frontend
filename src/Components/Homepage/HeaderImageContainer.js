@@ -6,7 +6,7 @@ const HeaderImageContainer = () => {
     <div className={styles.headerImageContainer}>
       <img
         className={styles.headerImage}
-        src={require("./images/Header-Img-024.png")}
+        src={require("./images/My project-12.png")}
         alt="icon-img"
       ></img>
 

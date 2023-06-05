@@ -16,7 +16,7 @@ const App = () => {
       <YoutubeVideo />
       <FormFilling />
       <Footer />
-      {/* addig some notes */}
+      {/* addig some notes againnnnnnn */}
     </div>
   );
 };

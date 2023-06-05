@@ -21,10 +21,15 @@
 - Metro Home page by Jin Zhang
 - Branch feature-homepage
 
-(b) A redesigned search function and features page(s) of property listings, using the company’s third party web page at https://apply.tpsportal.co.nz/tps6175? as a reference.
+(b) A redesigned search function and features page of property listings, using the company’s third party web page at https://apply.tpsportal.co.nz/tps6175? as a reference.
 
 - Metro search listing page by Heni Kimura
 - Branch feature-listing-page
+
+(c) A complete redesign building upon the property listings page. This additional page provides the user with more detailed information about the selected property(s). Where they have the options to enquire about the property, book a viewing of the property or make an application for the property.
+
+- Metro listing information page by Ricardo Diaz Rodriquez
+- Branch feature-listing-info
 
 ### **Purpose**
 
@@ -51,6 +56,18 @@ The purpose of this project is to assimilate a working environment, adopting an 
 
   ```sh
   npx create-react-app .
+  ```
+
+  - React Router Dom
+
+  ```sh
+  npm i react-router-dom
+  ```
+
+- Axios
+
+  ```sh
+  npm i axios
   ```
 
 ---
@@ -85,8 +102,14 @@ The purpose of this project is to assimilate a working environment, adopting an 
 
 ### **Contributors & our Contacts:**
 
+- _Developers:_
+
 - Heni Kimura - <henik@missionreadyhq.com>
 - Jin Zhang - <jinz@missionreadyhq.com>
+- Ricardo Diaz Rodriguez <diiaz2910@gmail.com>
+
+- _UX Designers:_
+
 - Aneesha Baidwan - <aneeshab@missionreadyhq.com>
 - Myint Aung - <myint@missionreadyhq.com>
 

@@ -1,8 +1,7 @@
 import React from "react";
-import styles from "./VideoDisplay.module.css";
-import LocalVideo from "./images/MRENZ_41BEACH_FINAL.mov";
+import styles from "./YoutubeVideo.module.css";
 
-const VideoDisplay = () => {
+const YoutubeVideo = () => {
   return (
     <div className={styles.videoDisplay}>
       <div className={styles.textArea}>
@@ -40,4 +39,4 @@ const VideoDisplay = () => {
   );
 };
 
-export default VideoDisplay;
+export default YoutubeVideo;

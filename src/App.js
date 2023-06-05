@@ -4,8 +4,8 @@ import Header from "./Components/CommonComponents/Header";
 import Footer from "./Components/CommonComponents/Footer";
 import HeaderImageContainer from "./Components/Homepage/HeaderImageContainer";
 import MainContainer from "./Components/Homepage/MainContainer";
-import VideoDisplay from "./Components/Homepage/VideoDisplay";
 import FormFilling from "./Components/Homepage/FormFilling";
+import YoutubeVideo from "./Components/Homepage/YoutubeVideo";
 
 const App = () => {
   return (
@@ -13,7 +13,7 @@ const App = () => {
       <Header />
       <HeaderImageContainer />
       <MainContainer />
-      <VideoDisplay />
+      <YoutubeVideo />
       <FormFilling />
       <Footer />
     </div>

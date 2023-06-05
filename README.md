@@ -23,12 +23,12 @@
 
 (b) A redesigned search function and features page of property listings, using the company’s third party web page at <https://apply.tpsportal.co.nz/tps6175?> as a reference.
 
-- Metro search listing page by Heni Kimura
+- Metro search listing page by Ricardo Diaz Rodriguez
 - Branch feature-listing-page
 
 (c) A complete redesign building upon the property listings page. This additional listing information page provides the user with more detailed information about the selected property(s). Where they have the options to enquire about the property, book a viewing of the property or make an application for the property.
 
-- Metro listing information page by Ricardo Diaz Rodriguez
+- Metro listing information page by Heni Kimura
 - Branch feature-listing-info
 
 ### **Purpose**

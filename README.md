@@ -26,9 +26,9 @@
 - Metro search listing page by Heni Kimura
 - Branch feature-listing-page
 
-(c) A complete redesign building upon the property listings page. This additional page provides the user with more detailed information about the selected property(s). Where they have the options to enquire about the property, book a viewing of the property or make an application for the property.
+(c) A complete redesign building upon the property listings page. This additional listing information page provides the user with more detailed information about the selected property(s). Where they have the options to enquire about the property, book a viewing of the property or make an application for the property.
 
-- Metro listing information page by Ricardo Diaz Rodriquez
+- Metro listing information page by Ricardo Diaz Rodriguez
 - Branch feature-listing-info
 
 ### **Purpose**
@@ -58,7 +58,7 @@ The purpose of this project is to assimilate a working environment, adopting an 
   npx create-react-app .
   ```
 
-  - React Router Dom
+- React Router Dom
 
   ```sh
   npm i react-router-dom
@@ -102,13 +102,13 @@ The purpose of this project is to assimilate a working environment, adopting an 
 
 ### **Contributors & our Contacts:**
 
-- _Developers:_
+_Developers:_
 
 - Heni Kimura - <henik@missionreadyhq.com>
 - Jin Zhang - <jinz@missionreadyhq.com>
 - Ricardo Diaz Rodriguez <diiaz2910@gmail.com>
 
-- _UX Designers:_
+_UX Designers:_
 
 - Aneesha Baidwan - <aneeshab@missionreadyhq.com>
 - Myint Aung - <myint@missionreadyhq.com>

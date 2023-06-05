@@ -16,12 +16,12 @@
 
 ### _Metro Re-design_
 
-(a) A redesigned home page at https://metronz.co.nz/, taking the customers feedback into consideration
+(a) A redesigned home page at <https://metronz.co.nz/>, taking the customers feedback into consideration
 
 - Metro Home page by Jin Zhang
 - Branch feature-homepage
 
-(b) A redesigned search function and features page of property listings, using the company’s third party web page at https://apply.tpsportal.co.nz/tps6175? as a reference.
+(b) A redesigned search function and features page of property listings, using the company’s third party web page at <https://apply.tpsportal.co.nz/tps6175?> as a reference.
 
 - Metro search listing page by Heni Kimura
 - Branch feature-listing-page

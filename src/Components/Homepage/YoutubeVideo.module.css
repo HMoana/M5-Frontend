@@ -1,0 +1,14 @@
+.videoDisplay {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.textArea {
+  font-weight: 500;
+  width: 75%;
+  justify-content: center;
+  padding: 10%;
+}

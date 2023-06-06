@@ -1,22 +1,18 @@
-import "./App.css";
-import React from "react";
-import Header from "./Components/CommonComponents/Header";
-import Footer from "./Components/CommonComponents/Footer";
-import HeaderImageContainer from "./Components/Homepage/HeaderImageContainer";
-import MainContainer from "./Components/Homepage/MainContainer";
-import FormFilling from "./Components/Homepage/FormFilling";
-import YoutubeVideo from "./Components/Homepage/YoutubeVideo";
+import { Routes, Route } from "react-router-dom";
+
+// Pages
+import HomePage from "./Components/Homepage/HomePage";
+import ListingsPage from "./Components/ListingsPage/ListingsPage";
+import ListingInfoPage from "./Components/ListingInfoPage/ListingInfoPage";
 
 const App = () => {
   return (
     <div>
-      <Header />
-      <HeaderImageContainer />
-      <MainContainer />
-      <YoutubeVideo />
-      <FormFilling />
-      <Footer />
-      {/* addig some notes againnnnnnn */}
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/listingsPage" element={<ListingsPage />} />
+        <Route path="/listingInfoPage" element={<ListingInfoPage />} />
+      </Routes>
     </div>
   );
 };

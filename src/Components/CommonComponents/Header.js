@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./Header.module.css";
 
+import { Link } from "react-router-dom";
+
 const Header = () => {
   return (
     <div className={styles.header}>
@@ -18,7 +20,7 @@ const Header = () => {
             <a href="https://www.google.com/">Services</a>
           </li>
           <li>
-            <a href="https://www.google.com/">Rent</a>
+            <Link to="/listingsPage">Rent</Link>
           </li>
           <li>
             <a href="https://www.google.com/">News</a>

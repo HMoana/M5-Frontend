@@ -1,0 +1,30 @@
+.rentalProperties {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.imageOne {
+  width: 50%;
+  height: 30%;
+}
+
+.rentalText {
+  width: 50%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 3% 8%;
+}
+
+.rentalButton {
+  width: 388px;
+  border: none;
+  padding: 10px 0;
+  background-color: #e4343b;
+  margin: 5px 0;
+  color: white;
+  border-radius: 8px;
+  font-size: 17px;
+}

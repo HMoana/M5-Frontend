@@ -1,0 +1,21 @@
+version: "3"
+services:
+  server:
+    build: ../server
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - mongo
+  client:
+    build: .
+    ports:
+      - 3000:3000
+    depends_on:
+      - server
+  mongo:
+    image: mongo
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db

@@ -1,0 +1,128 @@
+[
+  {
+    "address": {
+      "street": "3/7 Opaheke Road",
+      "suburb": "Papakura",
+      "city": "Auckland"
+    },
+    "price": "$500",
+    "features": "Great location & Central Papakura",
+    "bedrooms": "two",
+    "bathrooms": "one",
+    "garage": 1,
+    "category": "Lisa",
+    "image": "/public-images/projects/1.jpg"
+  },
+  {
+    "address": {
+      "street": "A/94 Royal Road",
+      "suburb": "Massey",
+      "city": "Auckland"
+    },
+    "price": "$510",
+    "features": "Close to Most Amenities",
+    "bedrooms": "two",
+    "bathrooms": "one",
+    "garage": 2,
+    "category": "Jacky",
+    "image": "/public-images/projects/2.jpg"
+  },
+  {
+    "address": {
+      "street": "2/17 Mason Avenue",
+      "suburb": "Pukekohe",
+      "city": "Auckland"
+    },
+    "price": "$490",
+    "features": "Tidy Unit in Hill School Area",
+    "bedrooms": "two",
+    "bathrooms": "one",
+    "garage": 1,
+    "category": "Emily",
+    "image": "/public-images/projects/3.jpg"
+  },
+  {
+    "address": {
+      "street": "4/41 Maungarei Road",
+      "suburb": "Remuera",
+      "city": "Auckland"
+    },
+    "price": "$420",
+    "features": "Prime Location",
+    "bedrooms": "two",
+    "bathrooms": "one",
+    "garage": 0,
+    "category": "Michael",
+    "image": "/public-images/projects/4.jpg"
+  },
+  {
+    "address": {
+      "street": "4/172 Main Highway",
+      "suburb": "Ellerslie",
+      "city": "Auckland"
+    },
+    "price": "$520",
+    "features": "Great Location",
+    "bedrooms": "two",
+    "bathrooms": "two",
+    "garage": 0,
+    "category": "Michael",
+    "image": "/public-images/projects/5.jpg"
+  },
+  {
+    "address": {
+      "street": "70B Valley Road",
+      "suburb": "Mt Eden",
+      "city": "Auckland"
+    },
+    "price": "$650",
+    "features": "Exquisite Villa in the Heart of Mt Eden",
+    "bedrooms": "two",
+    "bathrooms": "one",
+    "garage": 0,
+    "category": "Stephanie",
+    "image": "/public-images/projects/6.jpg"
+  },
+  {
+    "address": {
+      "street": "4 Lochview Ave",
+      "suburb": "Pukekohe",
+      "city": "Auckland"
+    },
+    "price": "$700",
+    "features": "Spacious Home",
+    "bedrooms": "four",
+    "bathrooms": "two",
+    "garage": 0,
+    "category": "Grace",
+    "image": "/public-images/projects/7.jpg"
+  },
+  {
+    "address": {
+      "street": "29 Greenfinch Road",
+      "suburb": "Hobsonville",
+      "city": "Auckland"
+    },
+    "price": "$950",
+    "features": "Your Perfect Home Awaits",
+    "bedrooms": "five",
+    "bathrooms": "three",
+    "garage": 2,
+    "category": "Bethany",
+    "image": "/public-images/projects/8.jpg"
+  },
+  {
+    "address": {
+      "street": "10 Mistral Place",
+      "suburb": "West Harbour",
+      "city": "Auckland"
+    },
+    "price": "$875",
+    "features": "Sunny & Spacious",
+    "bedrooms": "four",
+    "bathrooms": "two",
+    "garage": 2,
+    "category": "Tia",
+    "image": "/public-images/projects/5.jpg"
+  }
+]

@@ -4,6 +4,568 @@
   margin-bottom: 100px;
 }
 
+.test {
+  background-color: yellow;
+}
+.avatar {
+  width: 100%;
+  border-radius: 15px;
+}
+.card > h2 {
+  color: #707070;
+  font-weight: 700;
+  font-size: 25px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card > span {
+  color: #707070;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10rem;
+  background-color: #43c0f6;
+  padding: 0.4rem 0;
+}
+
+.profileIcon {
+  width: 40px;
+  margin: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: #707070;
+  line-height: 1.5;
+}
+
+p {
+  text-decoration: none;
+  color: #707070;
+  text-align: left;
+}
+
+.logoImage {
+  margin-left: 300px;
+  margin-top: 10px;
+  width: 220px;
+}
+
+.headerLinks {
+  display: flex;
+  align-items: center;
+  text-align: left;
+}
+
+.headerLinks a {
+  color: white;
+  font-weight: 500;
+}
+
+.flag {
+  margin: 7px;
+}
+.nav {
+  background-color: #43c0f6;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  gap: 2rem;
+  padding: 0 5px;
+}
+
+.nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  gap: 3.5rem;
+}
+
+.nav a {
+  color: inherit;
+  text-decoration: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
+  font-weight: bold;
+}
+
+.nav li.active {
+  /* background-color: #555; */
+}
+
+.nav li:hover {
+  /* background-color: #777; */
+}
+
+nav a:hover {
+  /* background-color: white; */
+  color: black;
+}
+
+/* Profile edit component */
+
+.middleContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.profileEdit {
+  background-color: white;
+  box-shadow: 0 2px 5px #ccc;
+  border-radius: 14px;
+  padding: 35px;
+  padding-bottom: 70px;
+  margin: 100px 70px 120px auto;
+}
+
+.photoAb {
+  width: 230px;
+  height: 230px;
+  padding: 28px;
+}
+
+.profileButton {
+  text-align: center;
+  background-color: white;
+  color: #43c0f6;
+  border-color: #43c0f6;
+  border-radius: 5px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border: 2px solid;
+  padding: 3px;
+  margin: 15px;
+  width: 175px;
+  height: 35px;
+}
+
+.profileButtonSection {
+  background-color: white;
+  flex-basis: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Infoboard */
+
+.infoBoard {
+  display: block;
+  justify-content: center;
+  background-color: white;
+  box-shadow: 0 2px 5px #ccc;
+  border-radius: 14px;
+  width: 550px;
+  padding: 35px;
+  padding-top: 20px;
+  margin: 100px auto 70px 0;
+}
+
+.studentName {
+  margin-top: 40px;
+  width: 100%;
+  text-align: center;
+  color: #707070;
+  font-size: 45px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.infoTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 25px;
+}
+
+.infoTable tr th {
+  color: #a5a5a5;
+  letter-spacing: 0.35px;
+  padding: 10px 10px;
+}
+
+.infoTable tr td {
+  color: #707070;
+  padding-left: 40px;
+}
+
+.lineBreak {
+  color: grey;
+  height: 2px;
+  width: 100%;
+}
+
+.buttonGroup {
+  display: flex;
+}
+/* Back to top button */
+
+.buttonClick {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15%;
+}
+
+.backToTop {
+  padding: 8px 15px 10px 15px;
+  height: 30px;
+  background-color: #e90064;
+  color: white;
+  margin-bottom: 50px;
+  border: none;
+  border-radius: 7px;
+  justify-content: right;
+}
+
+/* Footer */
+.bottomContainer {
+  display: flex;
+  justify-content: space-evenly;
+  background-color: #b2e4fa;
+  padding: 50px 100px;
+  margin: 0 auto 2rem auto;
+  text-align: center;
+  width: 100%;
+  height: 40%;
+}
+
+.footerDivs {
+  text-align: left;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 20px;
+}
+
+.levelupWorks {
+  text-align: left;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 20px;
+  width: 20%;
+}
+/*========================================================================  */
+/* Project Library styling */
+
+/* .home{
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    } */
+
+/* .mainWrap {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    } */
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 90px;
+}
+
+.categoryWrap {
+  width: 20%;
+  background-color: white;
+  padding: 50px;
+  margin: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #434242;
+  font-weight: 600;
+}
+
+.listWrap {
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Category Filter Panel */
+
+.categoryTitle {
+  color: #767676;
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  margin-top: 55px;
+  margin-bottom: 3px;
+  text-align: left;
+}
+
+.filterPanel {
+  padding: 20px;
+  /* margin-top: 120px; */
+}
+
+.categoryWrap {
+  flex: 20%;
+  background-color: white;
+  padding: 20px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+/* List area */
+
+.listMain {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.allButtons {
+  /* width: 100%; */
+  display: flex;
+  justify-content: flex-start;
+}
+
+.buttonsLevels {
+  display: flex;
+  padding: 20px;
+}
+
+.numberDisplay {
+  display: flex;
+  padding: 20px;
+  margin-left: 30%;
+  /* justify-content: flex-end; */
+}
+
+.listButtons {
+  padding: 6px 5px 10px 5px;
+  height: 30px;
+  background-color: #f6f1f1;
+  color: #434242;
+  margin: 2px;
+  border: none;
+  border-radius: 5px;
+  justify-content: right;
+  box-shadow: 0 2px 5px #ccc;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.listButtons:visited {
+  background-color: #43c0f6;
+  color: white;
+}
+
+.pageTitle {
+  padding-left: 20px;
+  color: #6c6c6c;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.titleProjects {
+  font-size: 40px;
+  text-align: left;
+}
+
+/* Filter Panel styling: */
+
+.checkLabels {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+  color: #434242;
+  margin: 10px;
+}
+
+.checkboxesFilter {
+  margin: 6px;
+}
+/* Filter Panel styling ---- template*/
+
+.mainContent {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  margin-bottom: 60px;
+}
+.checkboxes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.inputFieldBox {
+  width: 9rem;
+  height: 38px;
+  border: solid 1px #9babb8;
+  margin: 1rem 1rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: grey;
+  font-weight: 600;
+}
+
+.dropDownMenu {
+  border-radius: 8px;
+  margin: 1rem 1rem;
+  width: 12rem;
+  height: 38px;
+  padding: 3px;
+  border: solid 1px #9babb8;
+  color: grey;
+  font-weight: 600;
+}
+.btn {
+  margin: 2px;
+  padding: 5px;
+  border: grey;
+  border-radius: 5px;
+}
+
+.btn.active {
+  background-color: #0e77c8;
+  color: white;
+  margin: 2px;
+  padding: 5px;
+  border: grey;
+  border-radius: 5px;
+}
+
+.productsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  align-content: start;
+  justify-items: center;
+  margin-bottom: 80px;
+}
+
+/* JIN -------------------------------------*/
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.avatar {
+  width: 100%;
+  height: 60%;
+}
+.card > h4 {
+  color: #707070;
+  font-weight: 700;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card > span {
+  color: #707070;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card {
+  /* display: flex; */
+  list-style: none;
+  flex: 0 0 25%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25rem;
+  height: 26rem;
+  border-radius: 15px;
+  margin: 25px 20px;
+  text-align: left;
+  border: #acabab solid 1px;
+}
+
+.propertyInfo {
+  margin-left: 20px;
+  color: #707070;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.propertyInfo > span {
+  color: #707070;
+  font-weight: 600;
+  font-size: 15px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+/* JIN -------------------------------------*/
+
+/* Pagination */
+.paginationBtns {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.paginationBtns a {
+  padding: 1rem;
+  margin: 8rem;
+  border-radius: 5px;
+  border: 1px solid #2b2eff;
+  color: #2b2eff;
+  cursor: pointer;
+}
+
+.paginationBtns a:hover {
+  color: white;
+  background-color: #2b2eff;
+}
+
+.paginationActive a {
+  color: white;
+  background-color: #2b2eff;
+}
+
+.topPart {
+  margin-left: 16%;
+}
+
+@media (max-width: 1215px) {
+  .productsContainer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 864px) {
+  .productsContainer {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+@media (max-width: 514px) {
+  .App {
+    display: block;
+  }
+  .productsContainer {
+    gap: 2rem;
+  }
+}
+.app {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+}
+
 .avatar {
   width: 100%;
   border-radius: 15px;

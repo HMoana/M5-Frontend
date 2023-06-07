@@ -1,29 +1,16 @@
+// WITHOUT PAGINATION
 import React from "react";
 import styles from "./Listing.module.css";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import products from "./ListingPageData.json"; // Dummy data from dummy database
+// import products from "./sampleData.json"; // Dummy data from dummy database:
 
-export default function List() {
+export default function Listing() {
   // ---------------- STATES ----------------
-  const [books, setBooks] = useState();
-  const [selectionToShow, setSelectionToShow] = useState();
-
-  // Chosen Catagories
+  const [selectionToShow, setSelectionToShow] = useState(products);
   const [chosenBedrooms, setChosenBedrooms] = useState([]);
   const [chosenBathrooms, setChosenBathrooms] = useState([]);
-
-  // Total To Show
-  const [totalToShow, setTotalToShow] = useState(15);
-
-  // ---------------- API FETCH BY JIN ----------------
-  useEffect(() => {
-    fetch("http://localhost:4000/books")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setBooks(data);
-      });
-  }, []);
-  console.log("hello");
+  const [totalToShow, setTotalToShow] = useState(10);
 
   // ---------------- PRICE HANDLERS ADDED ----------------
   const [minPrice, setMinPrice] = useState(null);
@@ -184,38 +171,21 @@ export default function List() {
         {/* =============================================================MAPPING */}
         <div className={styles.productsContainer}>
           {selectionToShow &&
-<<<<<<< HEAD
             selectionToShow.map(function (product) {
               return (
                 <div key={product.id} className={styles.card}>
                   <img
                     className={styles.avatar}
                     src={product.image}
-=======
-            selectionToShow.map(function (data) {
-              return (
-                <div key={data.id} className={styles.card}>
-                  <img
-                    className={styles.avatar}
-                    src={data.image}
->>>>>>> origin/master
                     alt="property-photo"
                   ></img>
                   <div className={styles.propertyInfo}>
                     <h3>
-<<<<<<< HEAD
                       {product.address.street} <br />
                       {product.address.suburb} <br />
                       {product.price} <span>per week</span>
                     </h3>
                     <h4>{product.bedrooms}</h4>
-=======
-                      {data.address.street} <br />
-                      {data.address.suburb} <br />
-                      {data.price} <span>per week</span>
-                    </h3>
-                    <h4>{data.bedrooms}</h4>
->>>>>>> origin/master
                   </div>
                 </div>
               );

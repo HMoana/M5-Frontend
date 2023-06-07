@@ -1,29 +1,16 @@
+// WITHOUT PAGINATION
 import React from "react";
 import styles from "./Listing.module.css";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import products from "./ListingPageData.json"; // Dummy data from dummy database
+// import products from "./sampleData.json"; // Dummy data from dummy database:
 
-export default function List() {
+export default function Listing() {
   // ---------------- STATES ----------------
-  const [books, setBooks] = useState();
-  const [selectionToShow, setSelectionToShow] = useState();
-
-  // Chosen Catagories
+  const [selectionToShow, setSelectionToShow] = useState(products);
   const [chosenBedrooms, setChosenBedrooms] = useState([]);
   const [chosenBathrooms, setChosenBathrooms] = useState([]);
-
-  // Total To Show
-  const [totalToShow, setTotalToShow] = useState(15);
-
-  // ---------------- API FETCH BY JIN ----------------
-  useEffect(() => {
-    fetch("http://localhost:4000/books")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        setBooks(data);
-      });
-  }, []);
-  console.log("hello");
+  const [totalToShow, setTotalToShow] = useState(10);
 
   // ---------------- PRICE HANDLERS ADDED ----------------
   const [minPrice, setMinPrice] = useState(null);
@@ -37,7 +24,13 @@ export default function List() {
     setMaxPrice(Number(e.target.value));
   };
 
-  //Bedrooms Handler One-------------------------------------------
+  // ---------------- FILTER EVENT HANDLERS ----------------
+
+  const handleTotalToShow = (e) => {
+    setTotalToShow(Number(e.target.value));
+  };
+
+  //Bedrooms Handler One
 
   const handleBedrooms = (e) => {
     const bedroomsToFilter = e.target.value;
@@ -85,40 +78,36 @@ export default function List() {
       chosenBathrooms
     );
 
-    {
-      books &&
-        setSelectionToShow(
-          books
-            .filter((data) => {
-              // if user has checked a bedrooms checkbox, and if that bedrooms is NOT the same bedrooms that is inside the current data's category, then return false otherwise if true continue
-              if (
-                chosenBedrooms.length &&
-                !chosenBedrooms.includes(data.bedrooms)
-              )
-                return false;
-              // if user has checked a bathrooms checkbox, and if that bathrooms is NOT the same bathrooms that is inside the current data's category, then return false otherwise if true continue
-              if (
-                chosenBathrooms.length &&
-                !chosenBathrooms.includes(data.bathrooms)
-              )
-                return false;
+    setSelectionToShow(
+      products
+        .filter((product) => {
+          // if user has checked a bedrooms checkbox, and if that bedrooms is NOT the same bedrooms that is inside the current product's category, then return false otherwise if true continue
+          if (
+            chosenBedrooms.length &&
+            !chosenBedrooms.includes(product.bedrooms)
+          )
+            return false;
+          // if user has checked a bathrooms checkbox, and if that bathrooms is NOT the same bathrooms that is inside the current product's category, then return false otherwise if true continue
+          if (
+            chosenBathrooms.length &&
+            !chosenBathrooms.includes(product.bathrooms)
+          )
+            return false;
 
-              // Filter the products based on the selected price range
-              const productPrice = Number(data.price.replace("$", ""));
-              if (
-                (minPrice && productPrice < minPrice) ||
-                (maxPrice && productPrice > maxPrice)
-              )
-                return false;
-              // If all previous if statements evaluate to true, then return true for the current data and add it to the returned filtered array
-              return true;
-            })
-            .slice(0, totalToShow)
-        );
-    }
-  }, [books, chosenBedrooms, chosenBathrooms, minPrice, maxPrice, totalToShow]);
+          // Filter the products based on the selected price range
+          const productPrice = Number(product.price.replace("$", ""));
+          if (
+            (minPrice && productPrice < minPrice) ||
+            (maxPrice && productPrice > maxPrice)
+          )
+            return false;
+          // If all previous if statements evaluate to true, then return true for the current product and add it to the returned filtered array
+          return true;
+        })
+        .slice(0, totalToShow)
+    );
+  }, [chosenBedrooms, chosenBathrooms, minPrice, maxPrice, totalToShow]);
   console.log(selectionToShow);
-
   return (
     <div>
       <div className={styles.mainContent}>
@@ -182,21 +171,21 @@ export default function List() {
         {/* =============================================================MAPPING */}
         <div className={styles.productsContainer}>
           {selectionToShow &&
-            selectionToShow.map(function (data) {
+            selectionToShow.map(function (product) {
               return (
-                <div key={data.id} className={styles.card}>
+                <div key={product.id} className={styles.card}>
                   <img
                     className={styles.avatar}
-                    src={data.image}
+                    src={product.image}
                     alt="property-photo"
                   ></img>
                   <div className={styles.propertyInfo}>
                     <h3>
-                      {data.address.street} <br />
-                      {data.address.suburb} <br />
-                      {data.price} <span>per week</span>
+                      {product.address.street} <br />
+                      {product.address.suburb} <br />
+                      {product.price} <span>per week</span>
                     </h3>
-                    <h4>{data.bedrooms}</h4>
+                    <h4>{product.bedrooms}</h4>
                   </div>
                 </div>
               );

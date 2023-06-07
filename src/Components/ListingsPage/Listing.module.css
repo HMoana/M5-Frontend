@@ -4,6 +4,9 @@
   margin-bottom: 100px;
 }
 
+.test {
+  background-color: yellow;
+}
 .avatar {
   width: 100%;
   border-radius: 15px;

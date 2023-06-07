@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
+import Footer from "../CommonComponents/Footer";
+import Header from "../CommonComponents/Header";
+import Listing from "./Listing";
 
 const ListingsPage = () => {
   return (
     <div>
-      <h1>This is the Listings Page</h1>
+      <Header />
+      <Listing />
+      <Footer />
       <Link to="/listingInfoPage">Click here to see Listing Info</Link>
     </div>
   );

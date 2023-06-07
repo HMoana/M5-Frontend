@@ -2,6 +2,7 @@
   display: flex;
   width: 100%;
   align-items: center;
+  justify-content: center;
 }
 
 .imageOne {
@@ -10,7 +11,7 @@
 }
 
 .rentalText {
-  width: 40%;
+  width: 50%;
   text-align: left;
   display: flex;
   flex-direction: column;

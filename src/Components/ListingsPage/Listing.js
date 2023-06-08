@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function List() {
   // ---------------- STATES ----------------
+  const [products, setProducts] = useState([]);
   const [books, setBooks] = useState();
   const [selectionToShow, setSelectionToShow] = useState();
   //added notes
@@ -34,7 +35,13 @@ export default function List() {
     setMaxPrice(Number(e.target.value));
   };
 
-  //Bedrooms Handler One-------------------------------------------
+  // ---------------- FILTER EVENT HANDLERS ----------------
+
+  const handleTotalToShow = (e) => {
+    setTotalToShow(Number(e.target.value));
+  };
+
+  //Bedrooms Handler One
 
   const handleBedrooms = (e) => {
     const bedroomsToFilter = e.target.value;
@@ -113,7 +120,6 @@ export default function List() {
     }
   }, [books, chosenBedrooms, chosenBathrooms, minPrice, maxPrice]);
   console.log(selectionToShow);
-
   return (
     <div>
       <div className={styles.mainContent}>

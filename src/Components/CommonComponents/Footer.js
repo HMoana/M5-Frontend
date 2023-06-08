@@ -10,7 +10,7 @@ const Footer = () => {
           src={require("./images/logo.png")}
           alt="logo-img"
         />
-        <p className={styles.bottomText}>
+        <p>
           Metro NZ is one of the top Auckland Property Management companies. All
           of our staff are property investors who have expert knowledge of the
           property market and your best interest in mind at all times. Check out
@@ -55,12 +55,8 @@ const Footer = () => {
           />
           <input type="submit" value="Submit" className={styles.submitButton} />
         </form>
-        <p className={styles.bottomText}>
-          09 391 4642 | +64 21 646 119 | info@metronz.co.nz
-        </p>
-        <p className={styles.bottomText}>
-          Level 33, ANZ Centre 23-29 Albert St, Auckland 1010, New Zealand
-        </p>
+        <p>09 391 4642 | +64 21 646 119 | info@metronz.co.nz</p>
+        <p>Level 33, ANZ Centre 23-29 Albert St, Auckland 1010, New Zealand</p>
       </div>
     </footer>
   );

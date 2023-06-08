@@ -58,3 +58,59 @@
 .bottomText {
   color: white;
 }
+.bottomContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #e4343b;
+  padding: 50px 100px;
+  height: 30%;
+  color: white;
+}
+
+.footerDivs {
+  text-align: left;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 20px;
+}
+
+.columnLeft {
+  flex-direction: column;
+  width: 40%;
+  text-align: left;
+}
+
+.columnRight {
+  color: white;
+  flex-direction: column;
+  width: 50%;
+  text-align: left;
+}
+
+.submitButton {
+  width: 130px;
+  height: 48px;
+  background-color: white;
+  color: #e4343b;
+  border-radius: 8px;
+  border: none;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.emailInput {
+  width: 300px;
+  height: 48px;
+  border-radius: 8px;
+  margin: 5px 10px;
+  border: none;
+}
+
+.logoImg {
+  width: 300px;
+}
+
+.iconImg {
+  width: 30px;
+  margin: 25px 10px 0 0;
+}

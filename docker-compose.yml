@@ -1,12 +1,14 @@
 version: "3"
 services:
   server:
-    build: ../server
+    build: ../M5-Backend
     restart: always
     ports:
-      - 8080:8080
+      - 4000:4000
     depends_on:
       - mongo
+    environment:
+      - MONGO_URI=mongodb://127.0.0.1:27017
   client:
     build: .
     ports:
@@ -19,3 +21,5 @@ services:
       - 27017:27017
     volumes:
       - ./data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=bookstore

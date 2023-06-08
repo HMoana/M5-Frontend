@@ -3,7 +3,7 @@
 # this image has alpine OS with node in it
 FROM node:14
 
-WORKDIR /client
+WORKDIR /M5-Frontend
 
 COPY package.json package-lock.json ./
 

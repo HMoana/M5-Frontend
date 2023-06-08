@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function List() {
   // ---------------- STATES ----------------
-  const [products, setProducts] = useState([]);
+
   const [books, setBooks] = useState();
   const [selectionToShow, setSelectionToShow] = useState();
   //added notes
@@ -36,10 +36,6 @@ export default function List() {
   };
 
   // ---------------- FILTER EVENT HANDLERS ----------------
-
-  const handleTotalToShow = (e) => {
-    setTotalToShow(Number(e.target.value));
-  };
 
   //Bedrooms Handler One
 

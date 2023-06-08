@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function List() {
   // ---------------- STATES ----------------
+  const [products, setProducts] = useState([]);
   const [books, setBooks] = useState();
   const [selectionToShow, setSelectionToShow] = useState();
 

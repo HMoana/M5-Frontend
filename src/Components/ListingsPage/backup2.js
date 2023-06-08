@@ -6,7 +6,7 @@ export default function List() {
   // ---------------- STATES ----------------
   const [books, setBooks] = useState();
   const [selectionToShow, setSelectionToShow] = useState();
-
+  //added notes
   // Chosen Catagories
   const [chosenBedrooms, setChosenBedrooms] = useState([]);
   const [chosenBathrooms, setChosenBathrooms] = useState([]);

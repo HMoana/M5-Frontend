@@ -9,7 +9,7 @@ const Header = () => {
       <img
         className={styles.logoImage}
         src={require("./images/logo.png")}
-        alt="logo"
+        alt="logo-img"
       />
       <nav className={styles.nav}>
         <ul>
@@ -35,9 +35,9 @@ const Header = () => {
             <img
               className={styles.phoneImg}
               src={require("./images/Vectorred.png")}
-              alt="phone"
+              alt="logo-img"
             />
-            <a href="tel:09-391-4642">09 391 4642</a>
+            <a>09 391 4642</a>
           </li>
         </ul>
       </nav>

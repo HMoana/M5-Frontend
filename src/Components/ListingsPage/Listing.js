@@ -6,13 +6,10 @@ export default function List() {
   // ---------------- STATES ----------------
   const [books, setBooks] = useState();
   const [selectionToShow, setSelectionToShow] = useState();
-
+  //added notes
   // Chosen Catagories
   const [chosenBedrooms, setChosenBedrooms] = useState([]);
   const [chosenBathrooms, setChosenBathrooms] = useState([]);
-
-  // Total To Show
-  const [totalToShow, setTotalToShow] = useState(15);
 
   // ---------------- API FETCH BY JIN ----------------
   useEffect(() => {
@@ -88,35 +85,33 @@ export default function List() {
     {
       books &&
         setSelectionToShow(
-          books
-            .filter((data) => {
-              // if user has checked a bedrooms checkbox, and if that bedrooms is NOT the same bedrooms that is inside the current data's category, then return false otherwise if true continue
-              if (
-                chosenBedrooms.length &&
-                !chosenBedrooms.includes(data.bedrooms)
-              )
-                return false;
-              // if user has checked a bathrooms checkbox, and if that bathrooms is NOT the same bathrooms that is inside the current data's category, then return false otherwise if true continue
-              if (
-                chosenBathrooms.length &&
-                !chosenBathrooms.includes(data.bathrooms)
-              )
-                return false;
+          books.filter((book) => {
+            // if user has checked a bedrooms checkbox, and if that bedrooms is NOT the same bedrooms that is inside the current data's category, then return false otherwise if true continue
+            if (
+              chosenBedrooms.length &&
+              !chosenBedrooms.includes(book.bedrooms)
+            )
+              return false;
+            // if user has checked a bathrooms checkbox, and if that bathrooms is NOT the same bathrooms that is inside the current data's category, then return false otherwise if true continue
+            if (
+              chosenBathrooms.length &&
+              !chosenBathrooms.includes(book.bathrooms)
+            )
+              return false;
 
-              // Filter the products based on the selected price range
-              const productPrice = Number(data.price.replace("$", ""));
-              if (
-                (minPrice && productPrice < minPrice) ||
-                (maxPrice && productPrice > maxPrice)
-              )
-                return false;
-              // If all previous if statements evaluate to true, then return true for the current data and add it to the returned filtered array
-              return true;
-            })
-            .slice(0, totalToShow)
+            // Filter the products based on the selected price range
+            const productPrice = Number(book.price.replace("$", ""));
+            if (
+              (minPrice && productPrice < minPrice) ||
+              (maxPrice && productPrice > maxPrice)
+            )
+              return false;
+            // If all previous if statements evaluate to true, then return true for the current data and add it to the returned filtered array
+            return true;
+          })
         );
     }
-  }, [books, chosenBedrooms, chosenBathrooms, minPrice, maxPrice, totalToShow]);
+  }, [books, chosenBedrooms, chosenBathrooms, minPrice, maxPrice]);
   console.log(selectionToShow);
 
   return (
@@ -158,45 +153,95 @@ export default function List() {
 
           <br />
 
-          <select onChange={handleBedrooms} className={styles.dropDownMenu}>
-            <option value="" disabled selected>
-              Number of Bedrooms
-            </option>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-          </select>
+          {/* //-------------------------------------------------------- */}
+          <div className={styles.checkBoxContainer}>
+            <label htmlFor="bedroom-no">Bedroom Number: </label>
+            <input
+              type="checkbox"
+              id="two"
+              value="two"
+              onChange={handleBedrooms}
+            />
+            <label htmlFor="two" className={styles.checkBoxSpacing}>
+              2
+            </label>
+            <br />
+            <input
+              type="checkbox"
+              id="three"
+              value="three"
+              onChange={handleBedrooms}
+            />
+            <label htmlFor="three" className={styles.checkBoxSpacing}>
+              3
+            </label>
+            <br />
+            <input
+              type="checkbox"
+              id="four"
+              value="four"
+              onChange={handleBedrooms}
+            />
+            <label htmlFor="four" className={styles.checkBoxSpacing}>
+              4
+            </label>
+          </div>
+
           {/* BATHROOMS */}
-          <select onChange={handleBathrooms} className={styles.dropDownMenu}>
-            <option value="" disabled selected>
-              Number of Bathrooms
-            </option>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-          </select>
+          <div className={styles.checkBoxContainer}>
+            <label htmlFor="bathroom-no">Bathroom Number:</label>
+            <input
+              type="checkbox"
+              id="one"
+              value="one"
+              onChange={handleBathrooms}
+            />
+            <label htmlFor="one" className={styles.checkBoxSpacing}>
+              {" "}
+              1{" "}
+            </label>
+            <input
+              type="checkbox"
+              id="two"
+              value="two"
+              onChange={handleBathrooms}
+            />
+            <label htmlFor="one-four" className={styles.checkBoxSpacing}>
+              {" "}
+              2{" "}
+            </label>
+            <br />
+            <input
+              type="checkbox"
+              id="three"
+              value="three"
+              onChange={handleBathrooms}
+            />
+            <label htmlFor="three" className={styles.checkBoxSpacing}>
+              {" "}
+              3{" "}
+            </label>
+          </div>
         </div>
 
         {/* =============================================================MAPPING */}
         <div className={styles.productsContainer}>
           {selectionToShow &&
-            selectionToShow.map(function (data) {
+            selectionToShow.map(function (book) {
               return (
-                <div key={data.id} className={styles.card}>
+                <div key={book.id} className={styles.card}>
                   <img
                     className={styles.avatar}
-                    src={data.image}
+                    src={book.image}
                     alt="property-photo"
                   ></img>
                   <div className={styles.propertyInfo}>
                     <h3>
-                      {data.address.street} <br />
-                      {data.address.suburb} <br />
-                      {data.price} <span>per week</span>
+                      {book.address.street} <br />
+                      {book.address.suburb} <br />
+                      {book.price} <span>per week</span>
                     </h3>
-                    <h4>{data.bedrooms}</h4>
+                    <h4>{book.bedrooms}</h4>
                   </div>
                 </div>
               );

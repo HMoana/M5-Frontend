@@ -1,5 +1,5 @@
-import Header from "../CommonComponents/Header.js";
-import Footer from "../CommonComponents/Footer.js"
+import Header from "../CommonComponents/Header";
+import Footer from "../CommonComponents/Footer";
 
 const ListingInfoPage = () => {
   return (
@@ -9,3 +9,5 @@ const ListingInfoPage = () => {
     </div>
   );
 };
+
+export default ListingInfoPage;

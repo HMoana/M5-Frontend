@@ -1,0 +1,15 @@
+.dAgentBtns {
+    padding: 10px 55px;
+    border-radius: 8px;
+    background-color: white;
+    border-color: #E4343B;
+    color: #E4343B;
+    font-family: 'open sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.dAgentBtns:hover {
+    color: white;
+    background-color: #B8151B;
+}

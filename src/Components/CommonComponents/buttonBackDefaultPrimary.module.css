@@ -1,0 +1,18 @@
+.dBackBtns {
+    padding: 10px 40px;
+    border-radius: 8px;
+    background-color: #E4343B;
+    border-color: #E4343B;
+    color: white;
+    font-family: 'open sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    width: 530px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+.dBackBtns:hover {
+    background-color: #B8151B;
+    border-color: #B8151B;
+}

@@ -1,0 +1,17 @@
+.tBtns {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: white;
+    color: #E4343B;
+    border-color: #E4343B;
+    font-family: 'open sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.tBtns:hover {
+    color: white;
+    background-color: #B8151B;
+}

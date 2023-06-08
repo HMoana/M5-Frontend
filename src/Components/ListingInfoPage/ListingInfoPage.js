@@ -1,9 +1,11 @@
+import Header from "../CommonComponents/Header.js";
+import Footer from "../CommonComponents/Footer.js"
+
 const ListingInfoPage = () => {
   return (
     <div>
-      <h1> This is the Listing Information Page</h1>
+      <Header />
+      <Footer />
     </div>
   );
 };
-
-export default ListingInfoPage;

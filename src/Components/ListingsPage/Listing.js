@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 export default function List() {
   // ---------------- STATES ----------------
+  const [products, setProducts] = useState([]);
   const [books, setBooks] = useState();
   const [selectionToShow, setSelectionToShow] = useState();
 
@@ -184,38 +185,21 @@ export default function List() {
         {/* =============================================================MAPPING */}
         <div className={styles.productsContainer}>
           {selectionToShow &&
-<<<<<<< HEAD
             selectionToShow.map(function (product) {
               return (
                 <div key={product.id} className={styles.card}>
                   <img
                     className={styles.avatar}
                     src={product.image}
-=======
-            selectionToShow.map(function (data) {
-              return (
-                <div key={data.id} className={styles.card}>
-                  <img
-                    className={styles.avatar}
-                    src={data.image}
->>>>>>> origin/master
-                    alt="property-photo"
+                    alt="property"
                   ></img>
                   <div className={styles.propertyInfo}>
                     <h3>
-<<<<<<< HEAD
                       {product.address.street} <br />
                       {product.address.suburb} <br />
                       {product.price} <span>per week</span>
                     </h3>
                     <h4>{product.bedrooms}</h4>
-=======
-                      {data.address.street} <br />
-                      {data.address.suburb} <br />
-                      {data.price} <span>per week</span>
-                    </h3>
-                    <h4>{data.bedrooms}</h4>
->>>>>>> origin/master
                   </div>
                 </div>
               );

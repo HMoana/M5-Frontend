@@ -1,9 +1,12 @@
-.bottomContainer {
+.bottomContainer{
   display: flex;
   justify-content: space-between;
   background-color: #e4343b;
   padding: 50px 100px;
   height: 30%;
+}
+
+.bottomContainer p {
   color: white;
 }
 

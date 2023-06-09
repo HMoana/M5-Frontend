@@ -1,0 +1,19 @@
+.mapContainer {
+    margin-left: 200px;
+    min-height: 100vh;
+}
+
+.mapContainer h1 {
+    font-family: 'open sans', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 53px;
+    color: #E4343B;
+}
+
+.backBtnContainer {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    margin-right: 200px;
+}

@@ -258,7 +258,7 @@ export default function List() {
                   <img
                     className={styles.avatar}
                     src={book.image}
-                    alt="property-img"
+                    alt="property-photo"
                   ></img>
                   <div className={styles.propertyInfo}>
                     <div>

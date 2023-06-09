@@ -7,10 +7,10 @@ const Footer = () => {
       <div className={styles.columnLeft}>
         <img
           className={styles.logoImg}
-          src={require("./images/logo.png")}
+          src={require("./images/Logo White.png")}
           alt="logo-img"
         />
-        <p>
+        <p className={styles.footerText}>
           Metro NZ is one of the top Auckland Property Management companies. All
           of our staff are property investors who have expert knowledge of the
           property market and your best interest in mind at all times. Check out

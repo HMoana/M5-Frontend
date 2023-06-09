@@ -1,7 +1,17 @@
+import Header from "../CommonComponents/Header";
+import Footer from "../CommonComponents/Footer";
+import ListingInfoGallery from "./ListingInfoGallery";
+import ListingInfoMainContainer from "./ListingInfoMainContainer";
+import ListingInfoMap from "./ListingInfoMap";
+
 const ListingInfoPage = () => {
   return (
     <div>
-      <h1> This is the Listing Information Page</h1>
+      <Header />
+      <ListingInfoGallery />
+      <ListingInfoMainContainer />
+      <ListingInfoMap />
+      <Footer />
     </div>
   );
 };

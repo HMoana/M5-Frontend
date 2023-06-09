@@ -458,6 +458,17 @@ nav a:hover {
 }
 
 /* JIN -------------------------------------*/
+.checkBoxContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 1rem;
+}
+
+.checkBoxSpacing {
+  margin: 0 1rem 0 rem;
+}
+
 .app {
   display: flex;
   flex-wrap: wrap;

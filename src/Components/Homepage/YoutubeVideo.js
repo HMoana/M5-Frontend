@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./YoutubeVideo.module.css";
+import video from "./images/video.mp4";
 
 const YoutubeVideo = () => {
   return (
@@ -35,6 +36,7 @@ const YoutubeVideo = () => {
           Westpac Business Awards.
         </p>
       </div>
+      <video src={video} controls />
     </div>
   );
 };

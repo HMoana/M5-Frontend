@@ -54,7 +54,6 @@ a {
 
 p {
   text-decoration: none;
-  color: #707070;
   text-align: left;
 }
 
@@ -622,12 +621,6 @@ a {
   line-height: 1.5;
 }
 
-p {
-  text-decoration: none;
-  color: #707070;
-  text-align: left;
-}
-
 .logoImage {
   margin-left: 300px;
   margin-top: 10px;
@@ -948,6 +941,10 @@ nav a:hover {
   font-weight: 600;
 }
 
+.title {
+  font-size: 36px;
+  text-align: left;
+}
 .titleProjects {
   font-size: 40px;
   text-align: left;
@@ -992,6 +989,17 @@ nav a:hover {
   font-weight: 600;
 }
 
+.suburbFieldBox {
+  width: 17rem;
+  height: 38px;
+  border: solid 1px #9babb8;
+  margin: 1rem 1rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  color: grey;
+  font-weight: 600;
+}
 .dropDownMenu {
   border-radius: 8px;
   margin: 1rem 1rem;
@@ -1058,19 +1066,31 @@ nav a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 25rem;
-  height: 26rem;
+  width: 27rem;
+  height: 29rem;
   border-radius: 15px;
   margin: 25px 20px;
   text-align: left;
   border: #acabab solid 1px;
 }
 
+.roomIconsContainer {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.roomIcons {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: 3px;
+}
+
 .propertyInfo {
   margin-left: 20px;
   color: #707070;
   font-weight: 600;
-  line-height: 1.2;
 }
 
 .propertyInfo > span {

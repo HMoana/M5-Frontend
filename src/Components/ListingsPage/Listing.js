@@ -7,7 +7,7 @@ export default function List() {
 
   const [books, setBooks] = useState();
   const [selectionToShow, setSelectionToShow] = useState();
-  //added notes
+
   // Chosen Catagories
   const [chosenBedrooms, setChosenBedrooms] = useState([]);
   const [chosenBathrooms, setChosenBathrooms] = useState([]);
@@ -23,6 +23,13 @@ export default function List() {
   }, []);
   console.log("hello");
 
+  //--------------------
+  const suburbFilter = (propertySuburb) => {
+    const suburbToShow = books.filter((propSuburb) => {
+      return propSuburb.address.suburb === propertySuburb;
+    });
+    setSelectionToShow(suburbToShow);
+  };
   // ---------------- PRICE HANDLERS ADDED ----------------
   const [minPrice, setMinPrice] = useState(null);
   const [maxPrice, setMaxPrice] = useState(null);
@@ -121,6 +128,22 @@ export default function List() {
       <div className={styles.mainContent}>
         <h1 className={styles.title}>Browse Properties</h1>
         <div className={styles.checkboxes}>
+          <div>
+            <label htmlFor="min-price">Suburb:</label>
+            <select
+              onChange={(event) => suburbFilter(event.target.value)}
+              className={styles.suburbFieldBox}
+            >
+              <option value="Papakura">Papakura, Auckland</option>
+              <option value="Massey">Massey, Auckland</option>
+              <option value="Pukekohe">Pukekohe, Auckland</option>
+              <option value="Remueraa">Remuera, Auckland</option>
+              <option value="Ellerslie">Ellerslie, Auckland</option>
+              <option value="Mt Eden">Mt Eden, Auckland</option>
+              <option value="Hobsonville">Hobsonville, Auckland</option>
+              <option value="West Harbour">West Harbour, Auckland</option>
+            </select>
+          </div>
           <label htmlFor="min-price">Minimum Price:</label>
           <select
             id="min-price"
@@ -157,7 +180,7 @@ export default function List() {
 
           {/* //-------------------------------------------------------- */}
           <div className={styles.checkBoxContainer}>
-            <label htmlFor="bedroom-no">Bedroom Number: </label>
+            <label htmlFor="bedroom-no">Bedrooms: </label>
             <input
               type="checkbox"
               id="two"
@@ -191,7 +214,7 @@ export default function List() {
 
           {/* BATHROOMS */}
           <div className={styles.checkBoxContainer}>
-            <label htmlFor="bathroom-no">Bathroom Number:</label>
+            <label htmlFor="bathroom-no">Bathrooms:</label>
             <input
               type="checkbox"
               id="one"
@@ -238,12 +261,47 @@ export default function List() {
                     alt="property-photo"
                   ></img>
                   <div className={styles.propertyInfo}>
-                    <h3>
-                      {book.address.street} <br />
-                      {book.address.suburb} <br />
-                      {book.price} <span>per week</span>
-                    </h3>
-                    <h4>{book.bedrooms}</h4>
+                    <div>
+                      <h3>
+                        {book.address.street} <br />
+                        {book.address.suburb} <br />
+                        {book.price} <span>p. week</span>
+                      </h3>
+                      {book.features}
+                    </div>
+
+                    <div className={styles.roomIconsContainer}>
+                      <h4>{book.bedroomsnumber}</h4>
+                      <img
+                        className={styles.roomIcons}
+                        src={require("./images/bed-doublegrey.png")}
+                        alt="logo"
+                      />
+                      <h4>{book.bathroomsnumber}</h4>
+                      <img
+                        className={styles.roomIcons}
+                        src={require("./images/bathgrey.png")}
+                        alt="logo"
+                      />
+                      <h4>{book.garage}</h4>
+                      <img
+                        className={styles.roomIcons}
+                        src={require("./images/cargrey.png")}
+                        alt="logo"
+                      />
+                    </div>
+
+                    {/* 
+                    <img
+                      className={styles.logoImage}
+                      src={require("./images/logo.png")}
+                      alt="logo"
+                    />
+                    <img
+                      className={styles.logoImage}
+                      src={require("./images/logo.png")}
+                      alt="logo"
+                    /> */}
                   </div>
                 </div>
               );

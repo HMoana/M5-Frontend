@@ -4,16 +4,13 @@ import { useEffect, useState } from "react";
 
 export default function List() {
   // ---------------- STATES ----------------
-  const [products, setProducts] = useState([]);
+
   const [books, setBooks] = useState();
   const [selectionToShow, setSelectionToShow] = useState();
 
   // Chosen Catagories
   const [chosenBedrooms, setChosenBedrooms] = useState([]);
   const [chosenBathrooms, setChosenBathrooms] = useState([]);
-
-  // Total To Show
-  const [totalToShow, setTotalToShow] = useState(15);
 
   // ---------------- API FETCH BY JIN ----------------
   useEffect(() => {
@@ -26,6 +23,13 @@ export default function List() {
   }, []);
   console.log("hello");
 
+  //--------------------
+  const suburbFilter = (propertySuburb) => {
+    const suburbToShow = books.filter((propSuburb) => {
+      return propSuburb.address.suburb === propertySuburb;
+    });
+    setSelectionToShow(suburbToShow);
+  };
   // ---------------- PRICE HANDLERS ADDED ----------------
   const [minPrice, setMinPrice] = useState(null);
   const [maxPrice, setMaxPrice] = useState(null);
@@ -39,10 +43,6 @@ export default function List() {
   };
 
   // ---------------- FILTER EVENT HANDLERS ----------------
-
-  const handleTotalToShow = (e) => {
-    setTotalToShow(Number(e.target.value));
-  };
 
   //Bedrooms Handler One
 
@@ -92,41 +92,58 @@ export default function List() {
       chosenBathrooms
     );
 
-    setSelectionToShow(
-      products
-        .filter((product) => {
-          // if user has checked a bedrooms checkbox, and if that bedrooms is NOT the same bedrooms that is inside the current product's category, then return false otherwise if true continue
-          if (
-            chosenBedrooms.length &&
-            !chosenBedrooms.includes(product.bedrooms)
-          )
-            return false;
-          // if user has checked a bathrooms checkbox, and if that bathrooms is NOT the same bathrooms that is inside the current product's category, then return false otherwise if true continue
-          if (
-            chosenBathrooms.length &&
-            !chosenBathrooms.includes(product.bathrooms)
-          )
-            return false;
+    {
+      books &&
+        setSelectionToShow(
+          books.filter((book) => {
+            // if user has checked a bedrooms checkbox, and if that bedrooms is NOT the same bedrooms that is inside the current data's category, then return false otherwise if true continue
+            if (
+              chosenBedrooms.length &&
+              !chosenBedrooms.includes(book.bedrooms)
+            )
+              return false;
+            // if user has checked a bathrooms checkbox, and if that bathrooms is NOT the same bathrooms that is inside the current data's category, then return false otherwise if true continue
+            if (
+              chosenBathrooms.length &&
+              !chosenBathrooms.includes(book.bathrooms)
+            )
+              return false;
 
-          // Filter the products based on the selected price range
-          const productPrice = Number(product.price.replace("$", ""));
-          if (
-            (minPrice && productPrice < minPrice) ||
-            (maxPrice && productPrice > maxPrice)
-          )
-            return false;
-          // If all previous if statements evaluate to true, then return true for the current product and add it to the returned filtered array
-          return true;
-        })
-        .slice(0, totalToShow)
-    );
-  }, [chosenBedrooms, chosenBathrooms, minPrice, maxPrice, totalToShow]);
+            // Filter the products based on the selected price range
+            const productPrice = Number(book.price.replace("$", ""));
+            if (
+              (minPrice && productPrice < minPrice) ||
+              (maxPrice && productPrice > maxPrice)
+            )
+              return false;
+            // If all previous if statements evaluate to true, then return true for the current data and add it to the returned filtered array
+            return true;
+          })
+        );
+    }
+  }, [books, chosenBedrooms, chosenBathrooms, minPrice, maxPrice]);
   console.log(selectionToShow);
   return (
     <div>
       <div className={styles.mainContent}>
         <h1 className={styles.title}>Browse Properties</h1>
         <div className={styles.checkboxes}>
+          <div>
+            <label htmlFor="min-price">Suburb:</label>
+            <select
+              onChange={(event) => suburbFilter(event.target.value)}
+              className={styles.suburbFieldBox}
+            >
+              <option value="Papakura">Papakura, Auckland</option>
+              <option value="Massey">Massey, Auckland</option>
+              <option value="Pukekohe">Pukekohe, Auckland</option>
+              <option value="Remueraa">Remuera, Auckland</option>
+              <option value="Ellerslie">Ellerslie, Auckland</option>
+              <option value="Mt Eden">Mt Eden, Auckland</option>
+              <option value="Hobsonville">Hobsonville, Auckland</option>
+              <option value="West Harbour">West Harbour, Auckland</option>
+            </select>
+          </div>
           <label htmlFor="min-price">Minimum Price:</label>
           <select
             id="min-price"
@@ -161,45 +178,130 @@ export default function List() {
 
           <br />
 
-          <select onChange={handleBedrooms} className={styles.dropDownMenu}>
-            <option value="" disabled selected>
-              Number of Bedrooms
-            </option>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-          </select>
+          {/* //-------------------------------------------------------- */}
+          <div className={styles.checkBoxContainer}>
+            <label htmlFor="bedroom-no">Bedrooms: </label>
+            <input
+              type="checkbox"
+              id="two"
+              value="two"
+              onChange={handleBedrooms}
+            />
+            <label htmlFor="two" className={styles.checkBoxSpacing}>
+              2
+            </label>
+            <br />
+            <input
+              type="checkbox"
+              id="three"
+              value="three"
+              onChange={handleBedrooms}
+            />
+            <label htmlFor="three" className={styles.checkBoxSpacing}>
+              3
+            </label>
+            <br />
+            <input
+              type="checkbox"
+              id="four"
+              value="four"
+              onChange={handleBedrooms}
+            />
+            <label htmlFor="four" className={styles.checkBoxSpacing}>
+              4
+            </label>
+          </div>
+
           {/* BATHROOMS */}
-          <select onChange={handleBathrooms} className={styles.dropDownMenu}>
-            <option value="" disabled selected>
-              Number of Bathrooms
-            </option>
-            <option value="one">1</option>
-            <option value="two">2</option>
-            <option value="three">3</option>
-            <option value="four">4</option>
-          </select>
+          <div className={styles.checkBoxContainer}>
+            <label htmlFor="bathroom-no">Bathrooms:</label>
+            <input
+              type="checkbox"
+              id="one"
+              value="one"
+              onChange={handleBathrooms}
+            />
+            <label htmlFor="one" className={styles.checkBoxSpacing}>
+              {" "}
+              1{" "}
+            </label>
+            <input
+              type="checkbox"
+              id="two"
+              value="two"
+              onChange={handleBathrooms}
+            />
+            <label htmlFor="one-four" className={styles.checkBoxSpacing}>
+              {" "}
+              2{" "}
+            </label>
+            <br />
+            <input
+              type="checkbox"
+              id="three"
+              value="three"
+              onChange={handleBathrooms}
+            />
+            <label htmlFor="three" className={styles.checkBoxSpacing}>
+              {" "}
+              3{" "}
+            </label>
+          </div>
         </div>
 
         {/* =============================================================MAPPING */}
         <div className={styles.productsContainer}>
           {selectionToShow &&
-            selectionToShow.map(function (product) {
+            selectionToShow.map(function (book) {
               return (
-                <div key={product.id} className={styles.card}>
+                <div key={book.id} className={styles.card}>
                   <img
                     className={styles.avatar}
-                    src={product.image}
-                    alt="property"
+                    src={book.image}
+                    alt="property-img"
                   ></img>
                   <div className={styles.propertyInfo}>
-                    <h3>
-                      {product.address.street} <br />
-                      {product.address.suburb} <br />
-                      {product.price} <span>per week</span>
-                    </h3>
-                    <h4>{product.bedrooms}</h4>
+                    <div>
+                      <h3>
+                        {book.address.street} <br />
+                        {book.address.suburb} <br />
+                        {book.price} <span>p. week</span>
+                      </h3>
+                      {book.features}
+                    </div>
+
+                    <div className={styles.roomIconsContainer}>
+                      <h4>{book.bedroomsnumber}</h4>
+                      <img
+                        className={styles.roomIcons}
+                        src={require("./images/bed-doublegrey.png")}
+                        alt="logo"
+                      />
+                      <h4>{book.bathroomsnumber}</h4>
+                      <img
+                        className={styles.roomIcons}
+                        src={require("./images/bathgrey.png")}
+                        alt="logo"
+                      />
+                      <h4>{book.garage}</h4>
+                      <img
+                        className={styles.roomIcons}
+                        src={require("./images/cargrey.png")}
+                        alt="logo"
+                      />
+                    </div>
+
+                    {/* 
+                    <img
+                      className={styles.logoImage}
+                      src={require("./images/logo.png")}
+                      alt="logo"
+                    />
+                    <img
+                      className={styles.logoImage}
+                      src={require("./images/logo.png")}
+                      alt="logo"
+                    /> */}
                   </div>
                 </div>
               );

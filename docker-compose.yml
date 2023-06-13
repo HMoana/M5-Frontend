@@ -1,25 +1,42 @@
 version: "3"
 services:
+
   server:
-    build: ../M5-Backend
+    container_name: server
+    build: 
+      context: ../M5-Backend
+      dockerfile: Dockerfile
     restart: always
     ports:
       - 4000:4000
     depends_on:
       - mongo
-    environment:
-      - MONGO_URI=mongodb://mongo:27017/bookstore
+    networks:
+      - networkThree
+
   client:
-    build: .
+    container_name: client
+    build: 
+      context: .
+      dockerfile: Dockerfile
     ports:
       - 3000:3000
     depends_on:
       - server
+    networks:
+      - networkThree
+
   mongo:
+    container_name: mongo
     image: mongo
     ports:
       - 27017:27017
     volumes:
       - ./data:/data/db
-    environment:
-      - MONGO_INITDB_DATABASE=bookstore
+    networks:
+      - networkThree
+
+networks:
+  networkThree:
+
+# volumes:

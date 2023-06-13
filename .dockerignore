@@ -6,4 +6,4 @@ Dockerfile
 data
 node_modules/
 .dockerignore
-data/
+data/ 

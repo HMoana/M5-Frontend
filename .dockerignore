@@ -4,3 +4,6 @@ build/
 Dockerfile
 .dockerignore
 data
+node_modules/
+.dockerignore
+data/

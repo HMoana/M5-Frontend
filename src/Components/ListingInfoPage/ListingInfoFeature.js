@@ -3,32 +3,50 @@ import styles from './ListingInfoFeature.module.css';
 import PrimaryButtons from '../CommonComponents/buttonDefaultPrimary';
 import EnquireButton from '../CommonComponents/buttonAgentDefaultTertiary';
 import BookingButton from '../CommonComponents/buttonAgentBookingDefaultPrimary';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const ListingInfoFeature = () => {
+
+  const [bookData, setBookData] = useState({});
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:4000/books/64805228698870d8b8c645de")
+      .then((response) => {
+        setBookData(response.data);
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  
+
   return (
    <div className={styles.featureWrapper}>
 
-     {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Featurette section ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
      <div className={styles.featureContainer}>
       <div className={styles.featureText}>
-        <h1>Exquisite Villa in Mt Eden</h1>
-        <h2>70B Valley Road, Mt Eden, Auckland</h2>
-        <h2>$650</h2>
+        <h1>{bookData.features}</h1>
+        <h2><h2>{bookData.address && bookData.address.street} {bookData.address && bookData.address.suburb} {bookData.address && bookData.address.city}</h2>
+</h2>
+        <h2>{bookData.price}</h2>
 
         <span className={styles.spanText}>
-                  2 
+                {bookData.bedroomsnumber} 
                   <img
                 className={styles.icons}
                 src={require("./images/bed-double.png")}
                 alt="bed-img"
               ></img>
-                1 
+                {bookData.bathroomsnumber}
                   <img
                 className={styles.icons}
                 src={require("./images/bath.png")}
                 alt="bath-img"
               ></img>
-                0 
+                {bookData.garage} 
                   <img
                 className={styles.icons}
                 src={require("./images/car.png")}
@@ -51,9 +69,6 @@ const ListingInfoFeature = () => {
       </div>
     </div>
 
-    {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Agent section ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
-   
-   
    <div className={styles.agent}>
     <div className={styles.agentDets}>
       <span className={styles.agentDetsSpan}>

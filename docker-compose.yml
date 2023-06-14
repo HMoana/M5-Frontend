@@ -1,6 +1,17 @@
 version: "3"
 services:
 
+  client:
+    container_name: client
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    stdin_open: true
+    networks:
+      - networkThree
+
   server:
     container_name: server
     build: 
@@ -11,18 +22,6 @@ services:
       - 4000:4000
     depends_on:
       - mongo
-    networks:
-      - networkThree
-
-  client:
-    container_name: client
-    build: 
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - 3000:3000
-    depends_on:
-      - server
     networks:
       - networkThree
 
@@ -38,3 +37,8 @@ services:
 
 networks:
   networkThree:
+    driver: bridge
+
+volumes:
+  data:
+    driver: local

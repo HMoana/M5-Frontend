@@ -1,9 +1,0 @@
-node_modules/
-coverage/
-build/
-Dockerfile
-.dockerignore
-data
-node_modules/
-.dockerignore
-data/ 

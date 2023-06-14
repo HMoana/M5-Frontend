@@ -1,44 +1,44 @@
-version: "3"
-services:
+# version: "3"
+# services:
 
-  client:
-    container_name: client
-    build: 
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - 3000:3000
-    stdin_open: true
-    networks:
-      - networkThree
+#   client:
+#     container_name: client
+#     build: 
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - 3000:3000
+#     stdin_open: true
+#     networks:
+#       - networkThree
 
-  server:
-    container_name: server
-    build: 
-      context: ../M5-Backend
-      dockerfile: Dockerfile
-    restart: always
-    ports:
-      - 4000:4000
-    depends_on:
-      - mongo
-    networks:
-      - networkThree
+#   server:
+#     container_name: server
+#     build: 
+#       context: ../M5-Backend
+#       dockerfile: Dockerfile
+#     restart: always
+#     ports:
+#       - 4000:4000
+#     depends_on:
+#       - mongo
+#     networks:
+#       - networkThree
 
-  mongo:
-    container_name: mongo
-    image: mongo
-    ports:
-      - 27017:27017
-    volumes:
-      - ./data:/data/db
-    networks:
-      - networkThree
+#   mongo:
+#     container_name: mongo
+#     image: mongo
+#     ports:
+#       - 27017:27017
+#     volumes:
+#       - ./data:/data/db
+#     networks:
+#       - networkThree
 
-networks:
-  networkThree:
-    driver: bridge
+# networks:
+#   networkThree:
+#     driver: bridge
 
-volumes:
-  data:
-    driver: local
+# volumes:
+#   data:
+#     driver: local

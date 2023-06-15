@@ -12,7 +12,7 @@ const ListingInfoFeature = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/books/64897162d1de2d0f0fc5b807")
+      .get("http://localhost:4000/books/648a6b1d24fa31fbfcc0d503")
       .then((response) => {
         setBookData(response.data);
         console.log(response.data);

@@ -4,11 +4,6 @@
 /node_modules
 /.pnp
 .pnp.js
-.dockerignore
-docker-compose.yml
-Dockerfile
-.env
-data/
 
 # testing
 /coverage

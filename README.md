@@ -120,12 +120,13 @@ The purpose of this project is to assimilate a working environment, adopting an 
 
 ### **Set-up to build, run & host project:**
 
-- Open integrated terminal on _M5-Backend_
-- Open _docker desktop_ 
-- In the terminal use command _'docker-compose up --build'_ this will build, run & compose the docker containers
-- After some time the terminal will show _mongo output & listening to the server port_
-- In _docker desktop_ both mongo and server containers should appear as _'running'_
-- Open another integrated terminal on _M5-Frontend_ and use command _'npm start'_
+(a) Install and open _docker desktop_ on your local machine
+(b) Open integrated terminal on _M5-Backend_
+(c) In the terminal use command _'docker-compose start'_ this will build, run & compose the docker containers
+(d) After some time the terminal will show _mongo output & listening to the server port_
+(e) In _docker desktop_ both mongo and server containers should appear as _'running'_
+(f) Open another integrated terminal on _M5-Frontend_ and use command _'npm start'_
+(g) To stop docker containers use command _'docker-compose stop'_
 
 ---
 

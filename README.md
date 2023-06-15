@@ -159,8 +159,8 @@ _UX Designers:_
 
 ### **Project Link:**
 
-- [Github repository](https://github.com/HMoana/M5-Frontend.git "Github frontend repository")
-- [Github repository](https://github.com/jinzh23/M5-Backend.git "Github backend repository")
+- [Github frontend repository](https://github.com/HMoana/M5-Frontend.git "Github frontend repository")
+- [Github backend repository](https://github.com/jinzh23/M5-Backend.git "Github backend repository")
 
 ### **License:**
 

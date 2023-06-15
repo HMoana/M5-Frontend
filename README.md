@@ -1,4 +1,4 @@
-# React app built, run & hosted with docker containers and docker compose
+# Dockerized MERN Project
 
 ## Metro re-design of homepage and search listing page
 

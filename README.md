@@ -36,6 +36,10 @@ The purpose of this project is to assimilate a working environment, adopting an 
 
 - [React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo-react&logoColor=026e00 "React")
 - [React-url](https://react.dev/ "Reacturl")
+- [Javascript](https://img.shields.io/badge/Javascript-20232A?style=for-the-badge&logo-javascript&logoColor=026e00 "Javascript")
+- [Javascript-url](https://www.javascript.com/ "Javascripturl")
+- [CSS](https://img.shields.io/badge/CSS-20232A?style=for-the-badge&logo-css&logoColor=026e00 "CSS")
+- [CSS-url](https://www.w3schools.com/css/ "CSSurl")
 
 ---
 
@@ -110,7 +114,7 @@ The purpose of this project is to assimilate a working environment, adopting an 
 
    ```sh
    npm install
-   ```   ```
+   ```   
 
 ---
 
@@ -155,8 +159,8 @@ _UX Designers:_
 
 ### **Project Link:**
 
-[Github repository](https://github.com/HMoana/M5-Frontend.git "Github frontend repository")
-[Github repository](https://github.com/jinzh23/M5-Backend.git "Github backend repository")
+- [Github repository](https://github.com/HMoana/M5-Frontend.git "Github frontend repository")
+- [Github repository](https://github.com/jinzh23/M5-Backend.git "Github backend repository")
 
 ### **License:**
 

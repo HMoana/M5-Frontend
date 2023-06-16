@@ -1,25 +1,55 @@
-version: "3"
-services:
-  server:
-    build: ../M5-Backend
-    restart: always
-    ports:
-      - 4000:4000
-    depends_on:
-      - mongo
-    environment:
-      - MONGO_URI=mongodb://127.0.0.1:27017
-  client:
-    build: .
-    ports:
-      - 3000:3000
-    depends_on:
-      - server
-  mongo:
-    image: mongo
-    ports:
-      - 27017:27017
-    volumes:
-      - ./data:/data/db
-    environment:
-      - MONGO_INITDB_DATABASE=bookstore
+# version: "3"
+# services:
+#   client:
+#     build: .
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       - server
+
+#   server:
+#     build: ../M5-Backend
+#     ports:
+#       - "4000:4000"
+#     depends_on:
+#       - mongo
+
+#   mongo:
+#     image: mongo
+#     restart: always
+#     ports:
+#       - "27017:27017"
+#     volumes:
+#       - ./data:/data/db
+#     environment:
+#       MONGO_INITDB_DATABASE: bookstore
+
+# mongo:
+#   image: mongo
+#   ports:
+#     - 27017:27017
+#   volumes:
+#     - ./data:/data/db
+# environment:
+#   - MONGO_INITDB_DATABASE=bookstore
+
+#     server:
+#   build: ../M5-Backend
+#   restart: always
+#   ports:
+#     - 4000:4000
+#   depends_on:
+#     - mongo
+#   environment:
+#     - PORT=4000
+#     - URL=http://localhost
+#     - MONGO_URI=mongodb://mongo:27017
+#     - DB_NAME=bookstore
+#     - API_VERSION=V1
+
+# client:
+#   build: .
+#   ports:
+#     - 3000:3000
+#   depends_on:
+#     - server

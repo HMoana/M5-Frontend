@@ -23,7 +23,8 @@ export default function List() {
   }, []);
   console.log("hello");
 
-  //--------------------
+  //--------------------SUBURB AREA FILTER----------------
+
   const suburbFilter = (propertySuburb) => {
     const suburbToShow = books.filter((propSuburb) => {
       return propSuburb.address.suburb === propertySuburb;
@@ -290,18 +291,6 @@ export default function List() {
                         alt="logo"
                       />
                     </div>
-
-                    {/* 
-                    <img
-                      className={styles.logoImage}
-                      src={require("./images/logo.png")}
-                      alt="logo"
-                    />
-                    <img
-                      className={styles.logoImage}
-                      src={require("./images/logo.png")}
-                      alt="logo"
-                    /> */}
                   </div>
                 </div>
               );

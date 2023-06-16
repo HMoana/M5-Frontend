@@ -6,11 +6,9 @@ export default function List() {
   // ---------------- STATES ----------------
 
   const [books, setBooks] = useState();
-  const [selectionToShow, setSelectionToShow] = useState();
-
-  // Chosen Catagories
   const [chosenBedrooms, setChosenBedrooms] = useState([]);
   const [chosenBathrooms, setChosenBathrooms] = useState([]);
+  const [selectionToShow, setSelectionToShow] = useState();
 
   // ---------------- API FETCH BY JIN ----------------
   useEffect(() => {

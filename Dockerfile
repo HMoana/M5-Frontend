@@ -1,6 +1,6 @@
-# need an OS to run my api
-# tell docker where to get the OS from
-# this image has alpine OS with node in it
+# # need an OS to run my api
+# # tell docker where to get the OS from
+# # this image has alpine OS with node in it
 FROM node:14
 
 WORKDIR /M5-Frontend

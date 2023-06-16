@@ -10,7 +10,7 @@ export default function List() {
   const [chosenBathrooms, setChosenBathrooms] = useState([]);
   const [selectionToShow, setSelectionToShow] = useState();
 
-  // ---------------- API FETCH BY JIN ----------------
+  // ---------------- API FETCH ----------------
   useEffect(() => {
     fetch("http://localhost:4000/books")
       .then((response) => response.json())
@@ -29,7 +29,9 @@ export default function List() {
     });
     setSelectionToShow(suburbToShow);
   };
+
   // ---------------- PRICE HANDLERS ADDED ----------------
+
   const [minPrice, setMinPrice] = useState(null);
   const [maxPrice, setMaxPrice] = useState(null);
 
@@ -40,15 +42,12 @@ export default function List() {
   const handleMaxPrice = (e) => {
     setMaxPrice(Number(e.target.value));
   };
-
-  // ---------------- FILTER EVENT HANDLERS ----------------
+  // ---------------- FILTER EVENT HANDLERS ---------------------------------------
 
   //Bedrooms Handler One
 
   const handleBedrooms = (e) => {
     const bedroomsToFilter = e.target.value;
-    // Check if checked value is already checked
-    // If checkbox was already checked, remove it from array
     if (chosenBedrooms.includes(bedroomsToFilter)) {
       console.log("BEDROOM object updated. Removed:", bedroomsToFilter);
       setChosenBedrooms((prevState) => {
@@ -63,11 +62,9 @@ export default function List() {
     }
   };
 
-  // Bathrooms Handler
+  // Bathrooms Handler ------------------------------------------------------------
   const handleBathrooms = (e) => {
     const bathroomsToFilter = e.target.value;
-    // Check if checked value is already checked
-    // If checkbox was already checked, remove it from array
     if (chosenBathrooms.includes(bathroomsToFilter)) {
       console.log("Bathrooms object updated. Removed:", bathroomsToFilter);
       setChosenBathrooms((prevState) => {
@@ -75,14 +72,13 @@ export default function List() {
       });
       return;
     }
-    // If checkbox was not already checked, add it to the array
     setChosenBathrooms((prevState) => {
       console.log("bathrooms object updated. Added:", bathroomsToFilter);
       return [...prevState, bathroomsToFilter];
     });
   };
 
-  // ---------------- FILTERS ----------------
+  // ---------------- FILTERS ------------------------------------------
   useEffect(() => {
     console.log(
       "Chosen Bedrooms array:",
@@ -122,12 +118,15 @@ export default function List() {
     }
   }, [books, chosenBedrooms, chosenBathrooms, minPrice, maxPrice]);
   console.log(selectionToShow);
+
+  // ---------------- FILTERS AREA: DROPDOWN BOXES & CHECK BOXES ----------------
   return (
     <div>
       <div className={styles.mainContent}>
         <h1 className={styles.title}>Browse Properties</h1>
         <div className={styles.checkboxes}>
           <div>
+            {/* -------------------- SUBURB FILTERS ---------------------- */}
             <label htmlFor="min-price">Suburb:</label>
             <select
               onChange={(event) => suburbFilter(event.target.value)}
@@ -143,6 +142,8 @@ export default function List() {
               <option value="West Harbour">West Harbour, Auckland</option>
             </select>
           </div>
+
+          {/* -------------------- PRICE FILTERS ---------------------- */}
           <label htmlFor="min-price">Minimum Price:</label>
           <select
             id="min-price"
@@ -174,10 +175,11 @@ export default function List() {
             <option value="700">$700</option>
             <option value="800">$800</option>
           </select>
-
           <br />
 
-          {/* //-------------------------------------------------------- */}
+          {/* ----------------- CHECK BOXES -------------------------- */}
+
+          {/* BEDROOM CHECK BOXES */}
           <div className={styles.checkBoxContainer}>
             <label htmlFor="bedroom-no">Bedrooms: </label>
             <input
@@ -211,7 +213,7 @@ export default function List() {
             </label>
           </div>
 
-          {/* BATHROOMS */}
+          {/* BATHROOM CHECK BOXES */}
           <div className={styles.checkBoxContainer}>
             <label htmlFor="bathroom-no">Bathrooms:</label>
             <input
@@ -248,7 +250,8 @@ export default function List() {
           </div>
         </div>
 
-        {/* =============================================================MAPPING */}
+        {/* ---------------- MAIN CONTAINER OF SEARCH RESULT---------------- */}
+
         <div className={styles.productsContainer}>
           {selectionToShow &&
             selectionToShow.map(function (book) {
@@ -294,7 +297,6 @@ export default function List() {
               );
             })}
         </div>
-        {/* =============================================================MAPPING */}
       </div>
     </div>
   );

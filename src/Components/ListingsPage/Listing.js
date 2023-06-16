@@ -3,14 +3,15 @@ import styles from "./Listing.module.css";
 import { useEffect, useState } from "react";
 
 export default function List() {
-  // ---------------- STATES ----------------
+  // ---------------- STATES -----------------------------
 
   const [books, setBooks] = useState();
   const [chosenBedrooms, setChosenBedrooms] = useState([]);
   const [chosenBathrooms, setChosenBathrooms] = useState([]);
   const [selectionToShow, setSelectionToShow] = useState();
 
-  // ---------------- API FETCH ----------------
+  // ---------------- API FETCH --------------------------
+
   useEffect(() => {
     fetch("http://localhost:4000/books")
       .then((response) => response.json())
@@ -42,7 +43,7 @@ export default function List() {
   const handleMaxPrice = (e) => {
     setMaxPrice(Number(e.target.value));
   };
-  // ---------------- FILTER EVENT HANDLERS ---------------------------------------
+  // ---------------- FILTER EVENT HANDLERS ------------------------------------
 
   //Bedrooms Handler One
 
@@ -62,7 +63,7 @@ export default function List() {
     }
   };
 
-  // Bathrooms Handler ------------------------------------------------------------
+  // Bathrooms Handler ---------------------------------------------------
   const handleBathrooms = (e) => {
     const bathroomsToFilter = e.target.value;
     if (chosenBathrooms.includes(bathroomsToFilter)) {
@@ -119,7 +120,7 @@ export default function List() {
   }, [books, chosenBedrooms, chosenBathrooms, minPrice, maxPrice]);
   console.log(selectionToShow);
 
-  // ---------------- FILTERS AREA: DROPDOWN BOXES & CHECK BOXES ----------------
+  // ---------------- FILTERS AND DROPDOWN BOXES SECTION ----------------
   return (
     <div>
       <div className={styles.mainContent}>
@@ -143,7 +144,7 @@ export default function List() {
             </select>
           </div>
 
-          {/* -------------------- PRICE FILTERS ---------------------- */}
+          {/* -------------------- PRICE RANGE FILTERS -------------------- */}
           <label htmlFor="min-price">Minimum Price:</label>
           <select
             id="min-price"

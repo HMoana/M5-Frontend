@@ -14,7 +14,7 @@ const Header = () => {
       <nav className={styles.nav}>
         <ul>
           <li className={styles.active}>
-            <a href="https://www.google.com/">Home</a>
+            <a href="http://localhost:3000/">Home</a>
           </li>
           <li>
             <a href="https://www.google.com/">Services</a>
